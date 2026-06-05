@@ -2,18 +2,18 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
 const signToken = (id) => {
-  jwt.sign({ id }, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
 
 export const register = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
-    if (!username || !email || !password) {
+    const { name, email, password } = req.body;
+    if (!name || !email || !password) {
       return res.status(400).json({ message: "Please provide all fields" });
     }
-    if (passord.length < 6) {
+    if (password.length < 6) {
       return res
         .status(400)
         .json({ message: "Password must be at least 6 characters" });
