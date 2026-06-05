@@ -14,7 +14,7 @@ const habitLogSchema = new mongoose.Schema(
       required: true,
       index: true,
     },
-    completedData: {
+    completedDate: {
       type: String,
       required: true,
     },
@@ -27,7 +27,7 @@ const habitLogSchema = new mongoose.Schema(
 );
 
 habitLogSchema.index(
-  { userId: 1, habitId: 1, completedData: 1 },
+  { userId: 1, habitId: 1, completedDate: 1 },
   { unique: true },
 );
 
