@@ -31,6 +31,7 @@ export default function Habits() {
   const [formOpen, setFormOpen] = useState(false);
   const [editing, setEditing] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
   const [suggestOpen, setSuggestOpen] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState(null);
 
@@ -80,6 +81,7 @@ export default function Habits() {
 
   const save = async (data) => {
     setSubmitting(true);
+    setFormError("");
     try {
       if (editing) {
         const res = await api.put(`/habits/${editing._id}`, data);
@@ -91,6 +93,8 @@ export default function Habits() {
       }
       setFormOpen(false);
       setEditing(null);
+    } catch (err) {
+      setFormError(err.response?.data?.message || "Could not save habit. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -112,9 +116,9 @@ export default function Habits() {
       name: s.name,
       description: s.description,
       category: s.category,
-      frequency: s.frequency,
+      frequency: s.frequency === "weekly" ? "Weekly" : "Daily",
       icon: s.icon,
-      targetDays: s.frequency === "daily" ? 7 : 3,
+      targetDays: s.frequency === "weekly" ? 3 : 7,
     });
     setHabits((hs) => [...hs, res.data]);
     setLogsByHabit((p) => ({ ...p, [res.data._id]: [] }));
@@ -145,6 +149,7 @@ export default function Habits() {
             className="btn-primary"
             onClick={() => {
               setEditing(null);
+              setFormError("");
               setFormOpen(true);
             }}
           >
@@ -223,7 +228,11 @@ export default function Habits() {
           {!showArchived && habits.length === 0 && (
             <button
               className="btn-primary mt-4"
-              onClick={() => setFormOpen(true)}
+              onClick={() => {
+                setEditing(null);
+                setFormError("");
+                setFormOpen(true);
+              }}
             >
               <Plus size={14} />
               Create habit
@@ -295,6 +304,7 @@ export default function Habits() {
                     className="btn-ghost p-2"
                     onClick={() => {
                       setEditing(h);
+                      setFormError("");
                       setFormOpen(true);
                     }}
                     title="Edit"
@@ -331,15 +341,18 @@ export default function Habits() {
         onClose={() => {
           setFormOpen(false);
           setEditing(null);
+          setFormError("");
         }}
         title={editing ? "Edit habit" : "New habit"}
       >
         <HabitForm
           initial={editing}
           submitting={submitting}
+          error={formError}
           onCancel={() => {
             setFormOpen(false);
             setEditing(null);
+            setFormError("");
           }}
           onSubmit={save}
         />

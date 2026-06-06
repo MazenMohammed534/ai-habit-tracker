@@ -5,7 +5,7 @@ export const CATEGORIES = [
   "Mindfulness",
   "Productivity",
   "Social",
-  "Finance",
+  "Financial",
   "Creative",
   "Other",
 ];

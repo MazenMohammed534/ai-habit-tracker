@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { CATEGORIES, COLORS, ICONS } from "../utils/constants.js";
 
-export default function HabitForm({ initial, onSubmit, onCancel, submitting }) {
+export default function HabitForm({
+  initial,
+  onSubmit,
+  onCancel,
+  submitting,
+  error,
+}) {
   const [form, setForm] = useState({
     name: initial?.name || "",
     description: initial?.description || "",
     category: initial?.category || "Health",
-    frequency: initial?.frequency || "daily",
+    frequency: initial?.frequency || "Daily",
     targetDays: initial?.targetDays || 7,
     color: initial?.color || COLORS[0],
     icon: initial?.icon || ICONS[0],
@@ -72,8 +78,8 @@ export default function HabitForm({ initial, onSubmit, onCancel, submitting }) {
             value={form.frequency}
             onChange={set("frequency")}
           >
-            <option value="daily">Daily</option>
-            <option value="weekly">Weekly</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
           </select>
         </div>
       </div>
@@ -130,6 +136,10 @@ export default function HabitForm({ initial, onSubmit, onCancel, submitting }) {
           ))}
         </div>
       </div>
+
+      {error && (
+        <p className="text-sm text-rose-600 dark:text-rose-400">{error}</p>
+      )}
 
       <div className="flex justify-end gap-2 pt-2">
         <button type="button" className="btn-secondary" onClick={onCancel}>
