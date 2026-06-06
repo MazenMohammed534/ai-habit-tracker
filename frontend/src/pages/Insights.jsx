@@ -32,7 +32,7 @@ import { weekKeysFor, streakFromKeys } from "../utils/dateHelpers.js";
 import { useTheme } from "../context/ThemeContext.jsx";
 
 const PIE_COLORS = [
-  "#f59e0b",
+  "#a855f7",
   "#fb923c",
   "#ef4444",
   "#ec4899",
@@ -375,8 +375,8 @@ export default function Insights() {
               <BarChart data={dailyData}>
                 <defs>
                   <linearGradient id="day-bar" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#fcd34d" />
-                    <stop offset="100%" stopColor="#d97706" />
+                    <stop offset="0%" stopColor="#d8b4fe" />
+                    <stop offset="100%" stopColor="#9333ea" />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke={grid} />
@@ -433,7 +433,7 @@ export default function Insights() {
                   iconSize={8}
                 />
                 <Bar dataKey="Last week" fill="#cbd5e1" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="This week" fill="#f59e0b" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="This week" fill="#a855f7" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -554,7 +554,7 @@ export default function Insights() {
                       <div className="text-sm truncate">{h.name}</div>
                       <div
                         className={`text-xs font-medium ${
-                          cur > 0 ? "text-orange-500" : "text-faint"
+                          cur > 0 ? "text-brand-500" : "text-faint"
                         }`}
                       >
                         🔥 {cur} day{cur === 1 ? "" : "s"}

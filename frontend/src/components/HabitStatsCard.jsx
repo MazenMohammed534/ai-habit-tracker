@@ -15,11 +15,11 @@ export default function HabitStatsCard({ stat }) {
       </div>
       <div className="flex items-center gap-4 text-sm">
         <div className="flex items-center gap-1" title="Current streak">
-          <Flame size={14} className="text-orange-500" />
+          <Flame size={14} className="text-brand-500" />
           <span className="font-medium">{stat.currentStreak}</span>
         </div>
         <div className="flex items-center gap-1" title="Longest streak">
-          <Trophy size={14} className="text-amber-500" />
+          <Trophy size={14} className="text-brand-400" />
           <span className="font-medium">{stat.longestStreak}</span>
         </div>
         <div className="hidden sm:flex items-center gap-1" title="30-day count">

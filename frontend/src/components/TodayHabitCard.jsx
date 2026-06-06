@@ -67,7 +67,7 @@ export default function TodayHabitCard({
       <div className="hidden sm:flex items-center gap-1 text-sm text-soft">
         <Flame
           size={16}
-          className={streak > 0 ? "text-orange-500" : "text-faint"}
+          className={streak > 0 ? "text-brand-500" : "text-faint"}
         />
         <span className="font-medium">{streak}</span>
       </div>
@@ -135,7 +135,7 @@ export default function TodayHabitCard({
         onClick={onToggle}
         className={`shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition ${completed
           ? "bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-500/40 animate-pop"
-          : "bg-brand-100 border-2 border-border-brand-400 text-brand-400 hover:border-brand-400 hover:text-brand-400"
+          : "bg-brand-100 border-2 border-brand-300 text-brand-500 hover:border-brand-400 hover:text-brand-600"
           }`}
         aria-label={completed ? "Mark incomplete" : "Mark complete"}
       >

@@ -17,7 +17,7 @@ const HABITS = [
   { Icon: FaBookOpen, color: "#6366f1", orbit: "outer", delay: -20 },
   // middle orbit (reverse direction)
   { Icon: GiMeditation, color: "#8b5cf6", orbit: "middle", delay: -4, reverse: true },
-  { Icon: FaDumbbell, color: "#f59e0b", orbit: "middle", delay: -16, reverse: true },
+  { Icon: FaDumbbell, color: "#a855f7", orbit: "middle", delay: -16, reverse: true },
   // inner orbit
   { Icon: FaPenNib, color: "#ec4899", orbit: "inner", delay: -2 },
   { Icon: FaBullseye, color: "#10b981", orbit: "inner", delay: -10 },
@@ -41,22 +41,22 @@ export default function OrbitingHabits() {
   const isDark = theme === "dark";
 
   const sunGradient = isDark
-    ? "radial-gradient(circle at 30% 25%, rgba(253,224,71,0.4), rgba(251,191,36,0.24) 60%, rgba(217,119,6,0.2))"
-    : "radial-gradient(circle at 30% 25%, #ffffff, #fef3c7 45%, #fde68a 100%)";
+    ? "radial-gradient(circle at 30% 25%, rgba(216,180,254,0.4), rgba(168,85,247,0.24) 60%, rgba(126,34,206,0.2))"
+    : "radial-gradient(circle at 30% 25%, #ffffff, #f3e8ff 45%, #e9d5ff 100%)";
 
   const sunShadow = isDark
-    ? "inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 24px rgba(251,191,36,0.3)"
-    : "inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 24px rgba(217,119,6,0.22), 0 2px 6px rgba(217,119,6,0.14)";
+    ? "inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 24px rgba(168,85,247,0.3)"
+    : "inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 24px rgba(147,51,234,0.22), 0 2px 6px rgba(147,51,234,0.14)";
 
   const sunBorder = isDark
     ? "1px solid rgba(255,255,255,0.2)"
     : "1px solid rgba(255,255,255,0.8)";
 
-  const sunIconColor = isDark ? "#fde68a" : "#b45309";
+  const sunIconColor = isDark ? "#e9d5ff" : "#7e22ce";
 
   const haloBg = isDark
-    ? "radial-gradient(circle, rgba(251,191,36,0.24), transparent 70%)"
-    : "radial-gradient(circle, rgba(251,191,36,0.22), transparent 70%)";
+    ? "radial-gradient(circle, rgba(168,85,247,0.24), transparent 70%)"
+    : "radial-gradient(circle, rgba(168,85,247,0.22), transparent 70%)";
 
   return (
     <div className="relative mx-auto w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[460px] lg:h-[460px]">
@@ -64,7 +64,7 @@ export default function OrbitingHabits() {
       {STARS.map((s, i) => (
         <span
           key={i}
-          className="absolute rounded-full bg-amber-400/70 dark:bg-amber-200/70"
+          className="absolute rounded-full bg-brand-400/70 dark:bg-brand-300/70"
           style={{
             top: s.top,
             left: s.left,

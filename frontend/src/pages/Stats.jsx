@@ -124,7 +124,7 @@ export default function Stats() {
             {best && (
               <div className="card p-5">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                  <Flame size={14} className="text-orange-500" />
+                  <Flame size={14} className="text-brand-500" />
                   Best streak
                 </div>
                 <div className="mt-2 flex items-center gap-3">
@@ -143,8 +143,8 @@ export default function Stats() {
             )}
             {longestLongest && (
               <div className="card p-5">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  <Trophy size={14} className="text-amber-500" />
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
+                  <Trophy size={14} className="text-brand-400" />
                   Longest ever
                 </div>
                 <div className="mt-2 flex items-center gap-3">

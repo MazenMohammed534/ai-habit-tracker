@@ -264,7 +264,7 @@ export default function Habits() {
                     <span className="chip">{h.category}</span>
                     <span className="chip">{h.frequency}</span>
                     {h.isArchived && (
-                      <span className="chip bg-amber-500/15 text-amber-700 dark:text-amber-300">
+                      <span className="chip bg-brand-500/15 text-brand-700 dark:text-brand-300">
                         Archived
                       </span>
                     )}
@@ -283,7 +283,7 @@ export default function Habits() {
                   >
                     <Flame
                       size={14}
-                      className={current > 0 ? "text-orange-500" : "text-faint"}
+                      className={current > 0 ? "text-brand-500" : "text-faint"}
                     />
                     <span className="font-medium">{current}</span>
                   </div>
@@ -291,7 +291,7 @@ export default function Habits() {
                     className="flex items-center gap-1"
                     title="Longest streak"
                   >
-                    <Trophy size={14} className="text-amber-500" />
+                    <Trophy size={14} className="text-brand-400" />
                     <span className="font-medium">{longest}</span>
                   </div>
                   <div className="text-muted text-xs hidden md:block">

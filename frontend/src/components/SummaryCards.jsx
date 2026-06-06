@@ -37,7 +37,7 @@ export default function SummaryCards({ totalHabits, activeStreaks, bestStreak, w
         label="Best streak"
         value={bestStreak}
         iconBg="rgba(245,158,11,0.15)"
-        iconFg="#f59e0b"
+        iconFg="#a855f7"
       />
       <Card
         icon={TrendingUp}

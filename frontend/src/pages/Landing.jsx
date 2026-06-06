@@ -126,7 +126,7 @@ export default function Landing() {
                   </span>
                   <div className="flex-1 text-sm font-medium">{h.name}</div>
                   <div className="flex items-center gap-1 text-xs text-muted">
-                    <Flame size={12} className="text-orange-500" />
+                    <Flame size={12} className="text-brand-500" />
                     {h.streak}
                   </div>
                   <div
