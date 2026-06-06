@@ -99,7 +99,7 @@ export const getHeatmap = async (req, res) => {
 export const getHabitStats = async (req, res) => { 
   try {
     const habit = await Habit.findOne({
-      _id: req.params.id,
+      _id: req.params.habitId,
       userId: req.user._id,
     });
 
